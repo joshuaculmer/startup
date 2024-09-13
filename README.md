@@ -19,8 +19,7 @@ Lets say you want to learn how to dance but only know two moves. Or you know a t
 # Technology Description
 - HTML: Homepage, Login and Registration page, Dance List page, my moves page, Combo generator page, a page for each dance move
 - CSS: For this project a temporary image will fill the space where videos eventually will go. Effective use of icons and menu design. Contrasting color scheme for engagement and easily navegatable UI.
-- Javascript: Provides login features and interactivity with menu filters
-- React
-- Services???
+- Javascript/React: Provides login features and interactivity with menu filters
+- Services/API usage: Depending on the implementation from a business standpoint, I will use google maps api to dipslay local dance venues. This feature will primarily fulfil the requirement for the class and not add much to the site until the business aspect is more fleshed out. 
 - DB: Stores user login info, credentials, and move state. All dance moves, related videos, and move start and end positions for combination generator
 - Websocket: Allows users to share the website/applet, dance move instruction, and combinations to other users.
