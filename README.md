@@ -5,6 +5,10 @@
 
 Lets say you want to learn how to dance but only know two moves. Or you know a ton of moves but aren't sure how to use them together. The country dance catalog is a treasure trove of dance moves that will help dancers of any skill improve their dancing. Dance moves are categorized by difficulty, type, technique for convient sorting and improved learning experience for all skill levels. You will also be able to search for any move, learn it, and add it to a list of learned moves for convient access. For more advanced users, there will be an option to chain moves together by visualizing which moves lead into other moves and it can come up with combination suggestions for you known moves.
 
+# Web Diagram/Sketch
+![DanceDatabase](https://github.com/user-attachments/assets/2c4c2ece-cb1d-4222-897f-c7d5a02b7ffa)
+https://app.diagrams.net/#G1aoOZHRTqAb0n0Tna7QrM35ZPwMnwb16J#%7B%22pageId%22%3A%22C5RBs43oDa-KdzZeNtuy%22%7D
+
 
 # Key Features
 - Secure Login over HTTPS
