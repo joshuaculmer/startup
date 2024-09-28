@@ -5,3 +5,8 @@ public IP for webservice: http://54.82.181.238/
 
 
 I learned that its a lot easier to interpert the terminal command git status than it is to understand VS codes errors for Git merges
+
+
+Command for deployment to production:
+./deployFiles.sh -k ../KeyForAWSServer1.pem -h dancingdatabase.com -s startup
+
