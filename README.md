@@ -27,3 +27,14 @@ https://app.diagrams.net/#G1aoOZHRTqAb0n0Tna7QrM35ZPwMnwb16J#%7B%22pageId%22%3A%
 - Services/API usage: Depending on the implementation from a business standpoint, I will use google maps api to dipslay local dance venues. This feature will primarily fulfil the requirement for the class and not add much to the site until the business aspect is more fleshed out. 
 - DB: Stores user login info, credentials, and move state. All dance moves, related videos, and move start and end positions for combination generator
 - Websocket: Allows users to share the website/applet, dance move instruction, and combinations to other users.
+
+
+# HTML Deliverable
+Built out the basic structure of my startup
+
+- HTML pages - 7 HTML pages, Home, Dance moves list, my dance moves list,  Combo calculator, Share, About, and Login page all simply implemented.
+- Links - All pages are linked via a menu that is displayed across the top of each page. Once we have javascript or some other scripting function working I will implement a changing menu for when users are logged vs unregistered users.
+- Text - All pages have filler text summarizing what features will go where.
+- Images - I have placed a map of my website on the home page for my convience, it will be replaced with a more elegant layout in the future.
+- DB/Login. Login page is implemented. Dance moves list, my dance moves, and combo each summarize how they will require use of a database.
+- WebSocket - Live share feature is described on the share page. 
