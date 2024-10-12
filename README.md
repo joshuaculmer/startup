@@ -38,3 +38,13 @@ Built out the basic structure of my startup
 - Images - I have placed a map of my website on the home page for my convience, it will be replaced with a more elegant layout in the future.
 - DB/Login. Login page is implemented. Dance moves list, my dance moves, and combo each summarize how they will require use of a database.
 - WebSocket - Live share feature is described on the share page. 
+
+
+# CSS Deliverable
+Implemented CSS for startup
+- Header, footer and main content body all with custom formatting for HTML elements
+- Used bootstrap to make the navbar that shows active page
+- Window resizing adjusts each element of the page
+- Placeholders for final content edited with custom CSS
+- All text content consistently stylized
+- Integrated image for Jumbotron on landing page

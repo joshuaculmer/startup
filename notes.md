@@ -17,3 +17,8 @@ Command for deployment to production for Simon (Need to be in the folder with th
 # Git Notes
 
 debug using gitbash instead of vsCode, terminal is considerably clearer
+
+# TODO/Future Improvements
+
+- Enhance header to display username right justified
+- Reformat Jumbotron for mobile display
