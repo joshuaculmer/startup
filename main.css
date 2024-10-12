@@ -1,3 +1,8 @@
 header {
     position: fixed;
 }
+
+footer {
+    color: crimson;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
