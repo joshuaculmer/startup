@@ -48,4 +48,65 @@ DNS A record can't point to another A record
 Port 443:HTTPS, 80:HTTP, 22:SSH
 
 # Javascript Reference
+JSON (JavaScript Object Notation)
+document.getElementById("p2").style.color = "blue";
+
+Example switch statement Syntax:
+switch (number) {
+    case 1:
+        console.log("One");
+        break;
+    case 5:
+        console.log("Five");
+        break;
+    default:
+        console.log("Other number");
+}
+
+
+Example Object Syntax
+const obj = new Object();
+obj.key1 = value1;
+obj.key2 = value2;
+obj.method1 = function() {
+    // method code
+};
+
+Use <script> tags to invoke Javascript
+
+
+using a map() function Example: (makes an array with the values after running them through the lambda function)
+  const numbers = [1, 4, 9];
+  const roots = numbers.map((num) => Math.sqrt(num));
+
+  // roots is now     [1, 2, 3]
+  // numbers is still [1, 4, 9]
+
+# DOM
+Key Features of the DOM:
+
+Tree Structure: The DOM represents a document as a hierarchical tree structure. Each element, attribute, and piece of text is a node in this tree.
+        Document Node: The root of the tree, representing the entire document.
+        Element Nodes: Represent HTML elements (e.g., <div>, <p>, <span>).
+        Text Nodes: Represent the text inside elements.
+        Attribute Nodes: Represent the attributes of elements (like id, class).
+
+Dynamic Interaction: Using JavaScript, you can add, remove, or modify elements and attributes in the document. This allows for dynamic updates to the web page without needing to reload.
+
+Event Handling: The DOM enables the handling of user events (like clicks, key presses, etc.), allowing you to create interactive web applications.
+
+# CSS
+![boxmodel](https://github.com/user-attachments/assets/be30396c-2358-4475-8595-54424e650a1d)
+default span value is 1
+
+Padding values:    
+    padding-top
+    padding-right
+    padding-bottom
+    padding-left
+    
+All the padding properties can have the following values:
+    length - specifies a padding in px, pt, cm, etc.
+    % - specifies a padding in % of the width of the containing element
+    inherit - specifies that the padding should be inherited from the parent element
 
