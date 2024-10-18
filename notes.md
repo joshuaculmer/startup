@@ -24,20 +24,20 @@ debug using gitbash instead of vsCode, terminal is considerably clearer
 - Reformat Jumbotron for mobile display
 
 # Linux Commands
-chmod: Changes the file permissions of a file or directory. Numerical inputs are converted into read, write, share permisions
-pwd: Prints the current working directory. Displays the full path of the directory.
-cd: Changes the current directory.
-ls: Lists the contents of a directory. Options like -l (long format) and -a (show hidden files) can be added, e.g., ls -la.
-vim: Opens vim.
-nano: Opens Nano.
-mkdir: Creates a new directory.
-mv: Moves or renames files and directories. Example: mv file.txt /path/to/directory/ moves the file to a different directory.
-rm: Removes (deletes) files or directories. rm -r directory_name to delete a directory and its contents RECURSIVELY, without checking anything
-man: Displays the manual pages for other commands. Example: man ls
-ssh: Securely connects to a remote server using SSH.
-ps: Displays information about currently running processes.
-wget: Downloads files from the web. Example, wget http://example.com/file will download the specified file to your current directory.
-sudo: Executes a command with superuser (administrative) privileges.
+- chmod: Changes the file permissions of a file or directory. Numerical inputs are converted into read, write, share permisions
+- pwd: Prints the current working directory. Displays the full path of the directory.
+- cd: Changes the current directory.
+- ls: Lists the contents of a directory. Options like -l (long format) and -a (show hidden files) can be added, e.g., ls -la.
+- vim: Opens vim.
+- nano: Opens Nano.
+- mkdir: Creates a new directory.
+- mv: Moves or renames files and directories. Example: mv file.txt /path/to/directory/ moves the file to a different directory.
+- rm: Removes (deletes) files or directories. rm -r directory_name to delete a directory and its contents RECURSIVELY, without checking anything
+- man: Displays the manual pages for other commands. Example: man ls
+- ssh: Securely connects to a remote server using SSH.
+- ps: Displays information about currently running processes.
+- wget: Downloads files from the web. Example, wget http://example.com/file will download the specified file to your current directory.
+- sudo: Executes a command with superuser (administrative) privileges.
 
 # Notes reference
 
@@ -86,10 +86,10 @@ using a map() function Example: (makes an array with the values after running th
 Key Features of the DOM:
 
 Tree Structure: The DOM represents a document as a hierarchical tree structure. Each element, attribute, and piece of text is a node in this tree.
-        Document Node: The root of the tree, representing the entire document.
-        Element Nodes: Represent HTML elements (e.g., <div>, <p>, <span>).
-        Text Nodes: Represent the text inside elements.
-        Attribute Nodes: Represent the attributes of elements (like id, class).
+        - Document Node: The root of the tree, representing the entire document.
+        - Element Nodes: Represent HTML elements (e.g., <div>, <p>, <span>).
+        - Text Nodes: Represent the text inside elements.
+        - Attribute Nodes: Represent the attributes of elements (like id, class).
 
 Dynamic Interaction: Using JavaScript, you can add, remove, or modify elements and attributes in the document. This allows for dynamic updates to the web page without needing to reload.
 
@@ -100,13 +100,13 @@ Event Handling: The DOM enables the handling of user events (like clicks, key pr
 default span value is 1
 
 Padding values:    
-    padding-top
-    padding-right
-    padding-bottom
-    padding-left
+    - padding-top
+    - padding-right
+    - padding-bottom
+    - padding-left
     
 All the padding properties can have the following values:
-    length - specifies a padding in px, pt, cm, etc.
-    % - specifies a padding in % of the width of the containing element
-    inherit - specifies that the padding should be inherited from the parent element
+    - length - specifies a padding in px, pt, cm, etc.
+    - % - specifies a padding in % of the width of the containing element
+    - inherit - specifies that the padding should be inherited from the parent element
 
