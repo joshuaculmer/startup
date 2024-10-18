@@ -86,10 +86,10 @@ using a map() function Example: (makes an array with the values after running th
 Key Features of the DOM:
 
 Tree Structure: The DOM represents a document as a hierarchical tree structure. Each element, attribute, and piece of text is a node in this tree.
-        - Document Node: The root of the tree, representing the entire document.
-        - Element Nodes: Represent HTML elements (e.g., <div>, <p>, <span>).
-        - Text Nodes: Represent the text inside elements.
-        - Attribute Nodes: Represent the attributes of elements (like id, class).
+- Document Node: The root of the tree, representing the entire document.
+- Element Nodes: Represent HTML elements (e.g., <div>, <p>, <span>).
+- Text Nodes: Represent the text inside elements.
+- Attribute Nodes: Represent the attributes of elements (like id, class).
 
 Dynamic Interaction: Using JavaScript, you can add, remove, or modify elements and attributes in the document. This allows for dynamic updates to the web page without needing to reload.
 
