@@ -87,7 +87,7 @@ Key Features of the DOM:
 
 Tree Structure: The DOM represents a document as a hierarchical tree structure. Each element, attribute, and piece of text is a node in this tree.
 - Document Node: The root of the tree, representing the entire document.
-- Element Nodes: Represent HTML elements (e.g., <div>, <p>, <span>).
+- Element Nodes: Represent HTML elements (e.g., div, p, span).
 - Text Nodes: Represent the text inside elements.
 - Attribute Nodes: Represent the attributes of elements (like id, class).
 
