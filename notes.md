@@ -109,4 +109,8 @@ All the padding properties can have the following values:
     - length - specifies a padding in px, pt, cm, etc.
     - % - specifies a padding in % of the width of the containing element
     - inherit - specifies that the padding should be inherited from the parent element
-
+# Vite Commands
+npm create vite@latest demoVite -- --template react
+cd demoVite
+npm install
+npm run dev
