@@ -1,0 +1,24 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "Lets say you want to learn how to dance but only know two moves. Or you know a ton of moves but aren't sure how to use them together. The country dance catalog is a treasure trove of dance moves that will help dancers of any skill improve their dancing. Dance moves are categorized by difficulty, type, technique for convient sorting and improved learning experience for all skill levels. You will also be able to search for any move, learn it, and add it to a list of learned moves for convient access. For more advanced users, there will be an option to chain moves together by visualizing which moves lead into other moves and it can come up with combination suggestions for you known moves.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  }
+}
