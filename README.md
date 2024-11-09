@@ -48,3 +48,11 @@ Implemented CSS for startup
 - Placeholders for final content edited with custom CSS
 - All text content consistently stylized
 - Integrated image for Jumbotron on landing page
+
+
+# React Deliverable
+- Refactored HTML into React and Vite project
+- Deletion of all HTML files except index.html
+- Stubbed out implementation for videos display, mock app functionality
+- React Router used to dynamically update webpage instead of navigating
+- Need to use React Hooks to change header if logged in
