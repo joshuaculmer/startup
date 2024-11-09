@@ -25,8 +25,10 @@ function App() {
                             <ul class="navbar-nav nav-tabs me-auto mb-2 mb-lg-0">
                                 <NavLink className='nav-link' to=''>Home</NavLink>
                                 <NavLink className='nav-link' to='DanceMoves'>Dance Moves</NavLink>
-                                <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>
-                                <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>
+                                {authState === AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>)}
+                                {authState === AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>)}
                                 <NavLink className='nav-link' to='Share'>Share</NavLink>
                                 <NavLink className='nav-link' to='About'>About</NavLink>
                                 <NavLink className='nav-link' to='Login'>Login</NavLink>
