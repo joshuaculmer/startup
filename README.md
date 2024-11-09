@@ -51,8 +51,8 @@ Implemented CSS for startup
 
 
 # React Deliverable
-- Refactored HTML into React and Vite project
+- Refactored HTML into combined React and Vite project
 - Deletion of all HTML files except index.html
-- Stubbed out implementation for videos display, mock app functionality
+- Stubbed out implementation for dance moves displays
 - React Router used to dynamically update webpage instead of navigating
-- Need to use React Hooks to change header if logged in
+- React Hooks used to check Logged status and update Header accordingly

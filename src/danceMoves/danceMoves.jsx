@@ -10,7 +10,7 @@ export function DanceMoves() {
 
                 I'll put some media here that will represent the instruction for different dance Moves.
                 This will call the database of videos
-                Still not sure if I'll have separate pages for each video, or just display them inline one at a time
+                Videos will update the DOM and be displayed here
             </div>
 
         </main>
