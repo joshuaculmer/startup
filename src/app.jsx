@@ -7,11 +7,14 @@ import { MyMoves } from './myMoves/myMoves';
 import { Register } from './register/register';
 import { Share } from './share/share';
 import { Welcome } from './welcome/welcome'
+import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-
+    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
     return (
         <BrowserRouter>
             <div>
@@ -42,7 +45,14 @@ function App() {
                     <Route path='/ComboCalculator' element={<ComboCalculator />} />
                     <Route path='/Share' element={<Share />} />
                     <Route path='/About' element={<About />} />
-                    <Route path='/Login' element={<Login />} />
+                    <Route path='/Login' element={<Login
+                        userName={userName}
+                        authState={authState}
+                        onAuthChange={(userName, authState) => {
+                            setAuthState(authState);
+                            setUserName(userName);
+                        }}
+                    />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 
