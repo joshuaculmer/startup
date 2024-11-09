@@ -9,12 +9,18 @@ import { Share } from './share/share';
 import { Welcome } from './welcome/welcome'
 import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Authenticated } from './login/authenticated';
 
 
 function App() {
     const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
+
+    function logout() {
+        localStorage.removeItem('userName');
+        props.onLogout();
+    }
     return (
         <BrowserRouter>
             <div>
@@ -31,10 +37,12 @@ function App() {
                                     <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>)}
                                 <NavLink className='nav-link' to='Share'>Share</NavLink>
                                 <NavLink className='nav-link' to='About'>About</NavLink>
-                                <NavLink className='nav-link' to='Login'>Login</NavLink>
-                                <li class="nav-item">
-                                    <span class="navbar-text">UserName Placeholder</span>
-                                </li>
+                                {authState !== AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='Login'>Login</NavLink>)}
+
+
+                                {authState === AuthState.Authenticated && (
+                                    < NavLink className='nav-link' to='Login' onClick={() => logout()}>Log Out</NavLink>)}
                             </ul>
                         </div>
                     </nav>
@@ -71,7 +79,7 @@ function App() {
 
 
             </div >
-        </BrowserRouter>
+        </BrowserRouter >
     );
 }
 
