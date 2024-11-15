@@ -56,3 +56,10 @@ Implemented CSS for startup
 - Stubbed out implementation for dance moves displays
 - React Router used to dynamically update webpage instead of navigating
 - React Hooks used to check Logged status and update Header accordingly
+
+# Service Deliberable
+- Refactored functionality to Node.js/Express HTTP service
+- Static middleware integrated for frontend
+- Working on adding a call to third party endpoint
+- Backend Service Endpoints: Login info is stored and checked to ensure valid credentials are used
+- Frontend calls service endpoints: Login and Logout both use fetch functionality

@@ -9,10 +9,10 @@ Startup URL: https://startup.dancingdatabase.com/
 # Deployment commands
 
 Command for deployment to production:
-./deployFiles.sh -k ../KeyForAWSServer1.pem -h dancingdatabase.com -s startup
+./deployService.sh -k ../KeyForAWSServer1.pem -h dancingdatabase.com -s startup
 
 Command for deployment to production for Simon (Need to be in the folder with the right deployment files)
-./deployFiles.sh -k ../KeyForAWSServer1.pem -h dancingdatabase.com -s simon
+./deployService.sh -k ../KeyForAWSServer1.pem -h dancingdatabase.com -s simon
 
 # Git Notes
 
@@ -22,6 +22,7 @@ debug using gitbash instead of vsCode, terminal is considerably clearer
 
 - Enhance header to display username right justified
 - Reformat Jumbotron for mobile display
+- Integrate dance moves into database and display them
 
 # Linux Commands
 - chmod: Changes the file permissions of a file or directory. Numerical inputs are converted into read, write, share permisions
@@ -144,3 +145,9 @@ remove the html file
 
 
 *IMPORTANT: as you go, make sure you can still render the whole thing perfectly, it should never look any different*
+
+# Service back end
+
+Make sure to install all depencies correctly. run "npm install express"  for service/index.js
+
+Replace react and javascript components with endpoints to get info from backend services
