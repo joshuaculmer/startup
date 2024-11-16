@@ -3,7 +3,7 @@ import React from "react";
 export function DanceMoves() {
     return (
         <main>
-            <div class="container vh-100">
+            <div class="container">
                 <section>
                     <h3>Dance instruction on each move will be placed here. Along with a list for all possible moves</h3>
                 </section>

@@ -3,7 +3,7 @@ import React from "react";
 export function ComboCalculator() {
     return (
         <main>
-            <div class="container vh-100">
+            <div class="container">
                 <section>
                     <h3>Will interface with the combo Calculator feature here</h3>
                 </section>

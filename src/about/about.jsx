@@ -3,7 +3,7 @@ import React from "react";
 export function About() {
     return (
         <main>
-            <div class="container vh-100">
+            <div class="container">
                 <section>
                     <h3>Brief description about the startup and details about chief developer</h3>
                 </section>

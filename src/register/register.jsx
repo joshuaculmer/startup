@@ -3,7 +3,7 @@ import React from "react";
 export function Register() {
     return (
         <main>
-            <div class="container vh-100">
+            <div class="container">
                 <section>
                     <h3>Authentication for initial sign in and account creation will be here</h3>
                 </section>

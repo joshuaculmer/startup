@@ -3,7 +3,7 @@ import React from "react";
 export function Share() {
     return (
         <main>
-            <div class="container vh-100">
+            <div class="container">
                 <section>
                     <h3>Websocket will be included here for sharability</h3>
                 </section>

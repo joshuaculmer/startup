@@ -6,7 +6,7 @@ import { Authenticated } from "./authenticated";
 export function Login({ userName, authState, onAuthChange }) {
     return (
         <main>
-            <div class="container vh-100">
+            <div class="container">
                 {/* {authState !== AuthState.Unknown && <h1>Need to Sign In</h1>} */}
                 {authState === AuthState.Authenticated &&
                     <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)}></Authenticated>}

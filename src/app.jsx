@@ -10,6 +10,7 @@ import { Welcome } from './welcome/welcome'
 import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Authenticated } from './login/authenticated';
+import "./app.css";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     }
     return (
         <BrowserRouter>
-            <div>
+            <div className="container vh-100">
                 <link rel="icon" type="image/x-icon" href="favicon-32x32.png"></link>
                 <header class="sticky-top">
                     <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -49,6 +50,7 @@ function App() {
                 </header>
 
                 <Routes>
+
                     <Route path='/' element={<Welcome />} exact />
                     <Route path='/DanceMoves' element={<DanceMoves />} />
                     <Route path='/MyMoves' element={<MyMoves />} />
@@ -64,6 +66,7 @@ function App() {
                         }}
                     />} />
                     <Route path='*' element={<NotFound />} />
+
                 </Routes>
 
                 <footer>
