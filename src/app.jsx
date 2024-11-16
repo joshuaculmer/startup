@@ -19,9 +19,19 @@ function App() {
     const [authState, setAuthState] = React.useState(currentAuthState);
 
     function logout() {
-        localStorage.removeItem('userName');
-        props.onLogout();
+        fetch(`/api/auth/logout`, {
+            method: 'delete',
+        })
+            .catch(() => {
+                // Logout failed. Assuming offline
+            })
+            .finally(() => {
+                localStorage.removeItem('userName');
+                setAuthState(AuthState.Unauthenticated)
+                props.onLogout();
+            });
     }
+
     return (
         <BrowserRouter>
             <div className="container vh-100">
