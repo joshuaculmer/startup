@@ -6,6 +6,7 @@ import { Login } from './login/login';
 import { MyMoves } from './myMoves/myMoves';
 import { Register } from './register/register';
 import { Share } from './share/share';
+import { Recipe } from './recipePlugin/recipe';
 import { Welcome } from './welcome/welcome'
 import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -43,6 +44,8 @@ function App() {
                                 <NavLink className='nav-link' to=''>Home</NavLink>
                                 <NavLink className='nav-link' to='DanceMoves'>Dance Moves</NavLink>
                                 {authState === AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='Recipes'>Recipes</NavLink>)}
+                                {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>)}
                                 {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>)}
@@ -75,6 +78,7 @@ function App() {
                             setUserName(userName);
                         }}
                     />} />
+                    <Route path='/Recipes' element={<Recipe />} />
                     <Route path='*' element={<NotFound />} />
 
                 </Routes>
