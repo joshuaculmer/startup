@@ -60,6 +60,6 @@ Implemented CSS for startup
 # Service Deliberable
 - Refactored functionality to Node.js/Express HTTP service
 - Static middleware integrated for frontend
-- Working on adding a call to third party endpoint
-- Backend Service Endpoints: Login info is stored and checked to ensure valid credentials are used
+- Random recipe API integrated to display API call functionality, this will be removed upon the completion of this project
+- Backend Service Endpoints: Login info is stored in service and checked to ensure valid credentials are used
 - Frontend calls service endpoints: Login and Logout both use fetch functionality
