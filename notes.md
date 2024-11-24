@@ -151,3 +151,12 @@ remove the html file
 Make sure to install all depencies correctly. run "npm install express"  for service/index.js
 
 Replace react and javascript components with endpoints to get info from backend services
+
+
+# Issues with Mongodb
+
+Need to ensure that every dependency is installed. So npm install or npm install mongodb and npm install cookie-parser were necessary to sync things up. The fix as suggested on canvas was useful:
+const client = new MongoClient(url, { tls: true, serverSelectionTimeoutMS: 3000, autoSelectFamily: false, });
+fixed deployment issues. Atlas was quick to set up, free, and intuitive. Comes with a cool gui to see who has accessed the db. 
+
+It is worth noting that additional endpoints now call the db layer to access the information contained there.
