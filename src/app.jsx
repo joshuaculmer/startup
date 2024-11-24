@@ -62,8 +62,8 @@ function App() {
                     </nav>
                 </header>
 
-                <Routes>
 
+                <Routes>
                     <Route path='/' element={<Welcome />} exact />
                     <Route path='/DanceMoves' element={<DanceMoves />} />
                     <Route path='/MyMoves' element={<MyMoves />} />
@@ -82,8 +82,7 @@ function App() {
                     <Route path='*' element={<NotFound />} />
 
                 </Routes>
-
-                <footer>
+                <footer className="fixed-bottom">
                     <nav className="navbar bg-light">
                         <div className="container-fluid justify-content-center text-muted">
                             <div className="nav-item px-2">Joshua Culmer</div>
