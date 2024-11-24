@@ -36,7 +36,7 @@ function App() {
     return (
         <BrowserRouter>
             <div className="container vh-100">
-                <link rel="icon" type="image/x-icon" href="./public/img/favicon-32x32.png"></link>
+                <link rel="icon" type="image/x-icon" href="favicon-32x32.png"></link>
                 <header class="sticky-top">
                     <nav class="navbar navbar-expand-sm bg-light navbar-light">
                         <div class="container-fluid">
