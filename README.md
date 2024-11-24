@@ -57,9 +57,17 @@ Implemented CSS for startup
 - React Router used to dynamically update webpage instead of navigating
 - React Hooks used to check Logged status and update Header accordingly
 
-# Service Deliberable
+# Service Deliverable
 - Refactored functionality to Node.js/Express HTTP service
 - Static middleware integrated for frontend
 - Random recipe API integrated to display API call functionality, this will be removed upon the completion of this project
 - Backend Service Endpoints: Login info is stored in service and checked to ensure valid credentials are used
 - Frontend calls service endpoints: Login and Logout both use fetch functionality
+
+# Login Deliverable
+- Created account with Mongodb and Atlas
+- startup.dancingdatabase.com uses said db for all login and registration queries instead of node.js
+- New users can register, registration does not allow for duplicate usernames
+- Preexisting users can login if provided credentials
+- Passwords are encrypted using BCrypt prior to being stored in the db
+- Webpages for viewing personal dance moves list, combo calculator, and recipe api call are restricted to logged in users
