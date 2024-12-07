@@ -160,3 +160,7 @@ const client = new MongoClient(url, { tls: true, serverSelectionTimeoutMS: 3000,
 fixed deployment issues. Atlas was quick to set up, free, and intuitive. Comes with a cool gui to see who has accessed the db. 
 
 It is worth noting that additional endpoints now call the db layer to access the information contained there.
+
+# Websocket Design
+
+I will redo the share portion of the site to be a basic chat feature. In future development, more could be done here to enable users to upload videos of dance moves they like. Or a feature to add a particular dance move to someone else's list

@@ -5,10 +5,10 @@ export function Share() {
         <main>
             <div class="container">
                 <section>
-                    <h3>Websocket will be included here for sharability</h3>
+                    <h2>Share a message with other online users!</h2>
+                    <h3>At some point, users will be able to share your favorite dance moves with other users!</h3>
                 </section>
 
-                Hoping to be able to link to FB, instagram, Tik tok socials via sharing api. Still need to look into that more
             </div>
         </main>
     )
