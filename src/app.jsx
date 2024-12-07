@@ -68,7 +68,7 @@ function App() {
                     <Route path='/DanceMoves' element={<DanceMoves />} />
                     <Route path='/MyMoves' element={<MyMoves />} />
                     <Route path='/ComboCalculator' element={<ComboCalculator />} />
-                    <Route path='/Share' element={<Share />} />
+                    <Route path='/Share' element={<Share userName={userName} />} />
                     <Route path='/About' element={<About />} />
                     <Route path='/Login' element={<Login
                         userName={userName}
