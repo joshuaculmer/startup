@@ -72,3 +72,6 @@ Implemented CSS for startup
 - Passwords are encrypted using BCrypt prior to being stored in the db
 - Webpages for viewing personal dance moves list, combo calculator, and recipe api call are restricted to logged in users
 - Cookie saves user login information until logged out
+
+# WebSocket Deliverable
+- Simon Deployed to simon.dancingdatabase.com
