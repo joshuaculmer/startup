@@ -77,5 +77,5 @@ Implemented CSS for startup
 - Backend listens for WebSocket connection
 - Frontend makes WebSocket connection
 - Data sent over WebSocket connection
-[] working on displaying WS data
+- WS data is displayed live to logged in users under the Share tab
 [] Video display for dance moves and interactivity with said moves has not been implemented
