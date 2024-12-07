@@ -74,4 +74,8 @@ Implemented CSS for startup
 - Cookie saves user login information until logged out
 
 # WebSocket Deliverable
-- Simon Deployed to simon.dancingdatabase.com
+- Backend listens for WebSocket connection
+- Frontend makes WebSocket connection
+- Data sent over WebSocket connection
+[] working on displaying WS data
+[] Video display for dance moves and interactivity with said moves has not been implemented
