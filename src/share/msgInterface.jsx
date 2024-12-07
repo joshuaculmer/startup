@@ -9,7 +9,7 @@ export function MsgInterface(props) {
 
     function sendMsg() {
         MsgNotifier.broadcastEvent(userName, MsgEvent.Msg, msgText)
-        console.log(msgText)
+        // console.log(msgText)
         setMsgText('')
     }
 

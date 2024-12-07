@@ -28,6 +28,7 @@ class MsgEventNotifier {
         this.socket.onmessage = async (msg) => {
             try {
                 const event = JSON.parse(await msg.data.text());
+                // console.log(event)s
                 this.receiveEvent(event);
             } catch { }
         };
