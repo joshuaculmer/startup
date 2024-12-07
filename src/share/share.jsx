@@ -1,5 +1,6 @@
 import React from "react";
 import { Users } from "./users"
+import { MsgInterface } from "./msgInterface";
 
 export function Share(props) {
     console.log(props.userName);
@@ -11,7 +12,8 @@ export function Share(props) {
                     <h3>At some point, users will be able to share your favorite dance moves with other users!</h3>
                 </section>
                 <Users userName={props.userName} />
-                Your name is {props.userName}!
+                <MsgInterface userName={props.userName} />
+                {/* Your name is {props.userName}! */}
 
 
 
