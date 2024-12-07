@@ -25,16 +25,15 @@ export function Users(props) {
             let message = 'unknown';
             if (event.type === MsgEvent.Msg) {
                 message = event.value;
+                messageArray.push(
+                    <div key={i} className='event'>
+                        <span className={'user-event'}>{event.from.split('@')[0]}</span>
+                        :{message}
+                    </div>
+                );
             } else if (event.type === MsgEvent.System) {
                 message = event.value.msg;
             }
-
-            messageArray.push(
-                <div key={i} className='event'>
-                    <span className={'user-event'}>{event.from.split('@')[0]}</span>
-                    :{message}
-                </div>
-            );
         }
         return messageArray;
     }
