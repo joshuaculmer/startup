@@ -23,10 +23,8 @@ export function Users(props) {
         const messageArray = [];
         for (const [i, event] of events.entries()) {
             let message = 'unknown';
-            if (event.type === MsgEvent.End) {
-                message = `scored ${event.value.score}`;
-            } else if (event.type === MsgEvent.Start) {
-                message = `started a new game`;
+            if (event.type === MsgEvent.Msg) {
+                message = event.value;
             } else if (event.type === MsgEvent.System) {
                 message = event.value.msg;
             }
@@ -34,7 +32,7 @@ export function Users(props) {
             messageArray.push(
                 <div key={i} className='event'>
                     <span className={'user-event'}>{event.from.split('@')[0]}</span>
-                    {message}
+                    :{message}
                 </div>
             );
         }
@@ -43,8 +41,8 @@ export function Users(props) {
 
     return (
         <div className='users'>
-            User
-            <span className='user-name'>{userName}</span>
+            Welcome to the chat
+            <span className='user-name'> {userName}</span>!
             <div id='user-messages'>{createMessageArray()}</div>
         </div>
     );

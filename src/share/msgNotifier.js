@@ -1,5 +1,6 @@
 const MsgEvent = {
     System: 'system',
+    Msg: 'msg'
 };
 
 class EventMessage {

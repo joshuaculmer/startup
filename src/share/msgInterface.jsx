@@ -4,10 +4,11 @@ import { Button } from 'react-bootstrap';
 import { MsgEvent, MsgNotifier } from './msgNotifier';
 
 export function MsgInterface(props) {
-
+    const userName = props.userName
     const [msgText, setMsgText] = React.useState('')
 
     function sendMsg() {
+        MsgNotifier.broadcastEvent(userName, MsgEvent.Msg, msgText)
         console.log(msgText)
         setMsgText('')
     }
@@ -20,7 +21,6 @@ export function MsgInterface(props) {
                     onChange={(e) => setMsgText(e.target.value)}
                     placeholder='Your message here'
                     onKeyUp={(e) => {
-                        console.log(e)
                         if (e.key === 'Enter') {
                             sendMsg()
                         }
@@ -30,10 +30,6 @@ export function MsgInterface(props) {
                     Send
                 </Button>
             </div>
-
-            Hi {props.userName}, you'll be able to send messages here
-
-            Test message: {msgText}
 
         </div>
 
