@@ -164,3 +164,26 @@ It is worth noting that additional endpoints now call the db layer to access the
 # Websocket Design
 
 I will redo the share portion of the site to be a basic chat feature. In future development, more could be done here to enable users to upload videos of dance moves they like. Or a feature to add a particular dance move to someone else's list
+
+
+# Final Review note sheet
+
+To Review: Express service code, MongoDB code, 
+
+- Defualt Ports: HTTP:80, HTTPS:443, SSH:22
+- Error Codes 300:Error with options, 400: Bad reuest or bad url, 500:internal server error
+- content-type indicates what type of content the media is, ie. png or jpg
+- Secure Cookie: only sent over HTTPS, Http-only-cookie: can't be accessed by javascript, Same-Site-Cookie: control cross site cookie settings
+- HTTP GET request with a URL path of /api/document
+- User passwords should be stored as hash values instead of the raw passwords
+- Accronymns: JSX-Javascript XML, JS-Javascript, AWS-Amazon Web Service, NPM-Node Package Manager, NVM-Node Version Manager
+- React.useState adds a state/variable that can be changed
+- State hook: remembers input, like a variable
+- Context hook: access information, like media, or a chunk of text
+- Ref hook: makes a ref that is not used for rendering, like DOM or timeout ID
+- Effect hook: Interacts with an external effect, disengages from the react framework
+- Performance hook: prevent rerendering by using cache or skip a rerender
+- package.json manages dependencies, versions, filenames
+- javascript fetch command sends a request and returns a promise
+- node.js executes javascript outside of the browser
+- PM2 is a production process manager for Node.js applications
