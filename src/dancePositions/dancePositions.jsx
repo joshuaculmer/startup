@@ -7,20 +7,20 @@ export function DancePositions() {
 
     async function createDancePosition() {
         if (positionName != "" && description != "") {
-            const response = await fetch('api/country/positions', {
+            console.log("position name:" + positionName);
+            console.log("description:" + description);
+            const response = await fetch(`/api/country/positions`, {
                 method: 'post',
-                body: JSON.stringify({ position_name: positionName, description: description }),
+                body: JSON.stringify({ position_name: positionName, desc: description }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 },
             });
-            setPositionName("called api");
+            console.log("position sent successfully");
+            console.log("response: " + response);
         }
         setPositionName("");
         setDescription("");
-
-
-
     };
 
     return (

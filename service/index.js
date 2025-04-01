@@ -62,9 +62,10 @@ apiRouter.delete('/auth/logout', (_req, res) => {
 });
 
 
-apiRouter.post('/country/positions', (req, res) => {
-    console.log("here");
-    DB.createCountryDancePosition(req.position_name, req.description);
+apiRouter.post('/country/positions', async (req, res) => {
+    DB.createCountryDancePosition(req.body.position_name, req.body.desc);
+    // const countryDancePosition = await DB.createCountryDancePosition(req.position_name, req.desc);
+    res.status(200).end();
 });
 
 

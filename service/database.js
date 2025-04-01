@@ -59,8 +59,7 @@ async function createCountryDancePosition(position_name, description) {
         position_name: position_name,
         description: description,
     };
-
-    await countryPositionCollection.insertOne(countryDanceMove);
+    await countryPositionCollection.insertOne(countryDancePosition);
 
     return countryDanceMove;
 }
