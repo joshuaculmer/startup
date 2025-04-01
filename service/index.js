@@ -61,6 +61,20 @@ apiRouter.delete('/auth/logout', (_req, res) => {
     res.status(204).end();
 });
 
+
+apiRouter.post('/country/positions', (req, res) => {
+    console.log("here");
+    DB.createCountryDancePosition(req.position_name, req.description);
+});
+
+
+// apiRouter.post('/country/positions', (req, res) => {
+//     secureApiRouter((req, res,
+//         DB.createCountryDancePosition(req.position_name, req.description)
+//     ));
+// })
+
+
 // secureApiRouter verifies credentials for endpoints
 const secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);

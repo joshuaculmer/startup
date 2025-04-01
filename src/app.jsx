@@ -12,6 +12,7 @@ import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Authenticated } from './login/authenticated';
 import "./app.css";
+import { DancePositions } from './dancePositions/dancePositions';
 
 
 function App() {
@@ -41,15 +42,14 @@ function App() {
                         <div class="container-fluid">
                             <ul class="navbar-nav nav-tabs me-auto mb-2 mb-lg-0">
                                 <NavLink className='nav-link' to=''>Home</NavLink>
+                                <NavLink className='nav-link' to='DancePositions'>Dance Positions</NavLink>
                                 <NavLink className='nav-link' to='DanceMoves'>Dance Moves</NavLink>
-                                {authState === AuthState.Authenticated && (
-                                    <NavLink className='nav-link' to='Recipes'>Recipes</NavLink>)}
                                 {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>)}
                                 {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>)}
-                                {authState === AuthState.Authenticated && (
-                                    <NavLink className='nav-link' to='Share'>Share</NavLink>)}
+                                {/* {authState === AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='Share'>Share</NavLink>)} */}
                                 <NavLink className='nav-link' to='About'>About</NavLink>
                                 {authState !== AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='Login'>Login</NavLink>)}
@@ -65,6 +65,7 @@ function App() {
 
                 <Routes>
                     <Route path='/' element={<Welcome />} exact />
+                    <Route path='/DancePositions' element={<DancePositions />} />
                     <Route path='/DanceMoves' element={<DanceMoves />} />
                     <Route path='/MyMoves' element={<MyMoves />} />
                     <Route path='/ComboCalculator' element={<ComboCalculator />} />
@@ -78,7 +79,7 @@ function App() {
                             setUserName(userName);
                         }}
                     />} />
-                    <Route path='/Recipes' element={<Recipe />} />
+                    {/* <Route path='/Recipes' element={<Recipe />} /> */}
                     <Route path='*' element={<NotFound />} />
 
                 </Routes>
