@@ -64,6 +64,18 @@ async function createCountryDancePosition(position_name, description) {
     return countryDanceMove;
 }
 
+async function getCountryDancePositions() {
+    const cursor = countryPositionCollection.find({}, { 'position_name': 1, 'description': 1 });
+    const data = await cursor.toArray();
+
+    const serializedData = data.map(doc => ({
+        ...doc,
+        _id: doc._id.toString() // Convert ObjectId to string
+    }));
+
+    return serializedData;
+}
+
 
 module.exports = {
     getUser,
@@ -71,4 +83,5 @@ module.exports = {
     createUser,
     createCountryDanceMove,
     createCountryDancePosition,
+    getCountryDancePositions,
 };

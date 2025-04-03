@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 export function DancePositions() {
     const [positionName, setPositionName] = React.useState('');
     const [description, setDescription] = React.useState('');
+    const [positions, setPositions] = React.useState('');
 
     async function createDancePosition() {
         if (positionName != "" && description != "") {
@@ -23,6 +24,41 @@ export function DancePositions() {
         setDescription("");
     };
 
+    // async function updateDancePositions() {
+    //     const response = await fetch('/api/country/positions', {
+    //         method: 'get',
+    //         headers: {
+    //             'Content-type': 'application/json; charset=UTF-8',
+    //         },
+    //     });
+    //     // .then((x) => console.log(x))
+    //     // .then((x) => x.json())
+    //     // .then((response) => {
+    //     //     document.querySelector("pre").textContent = JSON.stringify(
+    //     //         response,
+    //     //         null,
+    //     //         "  "
+    //     //     );
+    //     // });
+    //     // console.log(response.json());
+    //     const positions_json = response.json();
+    //     setPositions(positions_json);
+    //     // console.log(positions);
+    //     document.querySelector("pre").textContent = JSON.stringify(response.json(), null, "  ");
+    // };
+
+    // updateDancePositions();
+
+    React.useEffect(() => {
+        fetch('/api/country/positions')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Fetched data:", data)
+                setPositions(JSON.stringify(data, null, "  "))
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    }, []);
+
     return (
         <main>
             <div class="container">
@@ -34,6 +70,13 @@ export function DancePositions() {
                 This will call the database of videos
                 Videos will update the DOM and be displayed here
 
+                <ul>
+                    {positions}
+                </ul>
+
+                <pre>
+                    Loading Dance Positions...
+                </pre>
 
                 <div className='input-group mb-3'>
                     {/* <span className='input-group-text'>@</span> */}

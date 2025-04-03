@@ -68,6 +68,11 @@ apiRouter.post('/country/positions', async (req, res) => {
     res.status(200).end();
 });
 
+apiRouter.get('/country/positions', async (req, res) => {
+    const positions = await DB.getCountryDancePositions();
+    res.json(positions);
+    res.status(200).end();
+});
 
 // apiRouter.post('/country/positions', (req, res) => {
 //     secureApiRouter((req, res,
