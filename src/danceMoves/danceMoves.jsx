@@ -8,6 +8,7 @@ export function DanceMoves() {
     const [pos_end, setpos_end] = React.useState('');
     const [description, setdescription] = React.useState('');
 
+    const [moves, setmoves] = React.useState('');
 
     async function createDanceMove() {
         if (move_name != "" && pos_start != "" && pos_end != "" && description != "") {
@@ -32,6 +33,16 @@ export function DanceMoves() {
         setdescription("");
     };
 
+    React.useEffect(() => {
+        fetch('/api/country/moves')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Fetched data:", data)
+                setmoves(JSON.stringify(data, null, "  "))
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    }, []);
+
     return (
         <main>
             <div class="container">
@@ -44,6 +55,9 @@ export function DanceMoves() {
                 Videos will update the DOM and be displayed here
             </div>
 
+            <ul>
+                {moves}
+            </ul>
 
             {/* move_name, pos_start, pos_end, description */}
             <div className='input-group mb-3'>
