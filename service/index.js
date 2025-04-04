@@ -142,7 +142,7 @@ apiRouter.post('/country/positions', async (req, res) => {
 });
 
 apiRouter.post('/country/moves', async (req, res) => {
-    DB.createCountryDanceMove(req.body.move_name, req.body.pos_start, req.body.pos_end, req.body.description, req.body.description);
+    DB.createCountryDanceMove(req.body.move_name, req.body.pos_start, req.body.pos_end, req.body.description, req.body.type, req.body.difficulty);
     // const countryDancePosition = await DB.createCountryDancePosition(req.position_name, req.desc);
     res.status(200).end();
 });

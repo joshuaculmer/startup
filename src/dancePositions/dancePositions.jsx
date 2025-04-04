@@ -66,17 +66,10 @@ export function DancePositions() {
                     <h3>Dance instruction on each position will be placed here. Along with a list for all possible positions</h3>
                 </section>
 
-                I'll put some media here that will represent the instruction for different dance Moves.
-                This will call the database of videos
-                Videos will update the DOM and be displayed here
-
                 <ul>
                     {positions}
                 </ul>
 
-                <pre>
-                    Loading Dance Positions...
-                </pre>
 
                 <div className='input-group mb-3'>
                     {/* <span className='input-group-text'>@</span> */}

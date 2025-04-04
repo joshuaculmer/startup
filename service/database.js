@@ -57,12 +57,14 @@ async function createUser(email, password) {
     return user;
 }
 
-async function createCountryDanceMove(move_name, pos_start, pos_end, description) {
+async function createCountryDanceMove(move_name, pos_start, pos_end, description, type, difficulty) {
     const countryDanceMove = {
         move_name: move_name,
         pos_start: pos_start,
         pos_end: pos_end,
         description: description,
+        type: type,
+        difficulty: difficulty,
     };
 
     await countryMoveCollection.insertOne(countryDanceMove);
@@ -94,7 +96,7 @@ async function getCountryDancePositions() {
 
 async function getCountryDanceMoves() {
     // move_name, pos_start, pos_end, description
-    const cursor = countryMoveCollection.find({}, { 'move_name': 1, 'pos_start': 1, 'pos_end': 1, 'description': 1 });
+    const cursor = countryMoveCollection.find({}, { 'move_name': 1, 'pos_start': 1, 'pos_end': 1, 'description': 1, 'type': 1, 'difficulty': 1 });
     const data = await cursor.toArray();
 
     const serializedData = data.map(doc => ({
