@@ -27,6 +27,22 @@ function getUserByToken(token) {
     return userCollection.findOne({ token: token });
 }
 
+function getBetaUserByToken(token) {
+    const cursor = userCollection.findOne({ token: token, beta: true });
+    return cursor;
+    // const user = userCollection.findOne({ token: token });
+    // const serializedUser = user.map(user => ({
+    //     ...user,
+    //     _id: user._id.toString() // Convert ObjectId to string
+    // }));
+    // if (serializedUser.beta == true) {
+    //     return user;
+    // }
+    // else {
+    //     return null;
+    // }
+}
+
 async function createUser(email, password) {
     // Hash the password before we insert it into the database
     const passwordHash = await bcrypt.hash(password, 10);
@@ -61,7 +77,7 @@ async function createCountryDancePosition(position_name, description) {
     };
     await countryPositionCollection.insertOne(countryDancePosition);
 
-    return countryDanceMove;
+    return countryDancePosition;
 }
 
 async function getCountryDancePositions() {
@@ -97,4 +113,5 @@ module.exports = {
     createCountryDancePosition,
     getCountryDancePositions,
     getCountryDanceMoves,
+    getBetaUserByToken,
 };

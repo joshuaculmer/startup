@@ -62,17 +62,6 @@ apiRouter.delete('/auth/logout', (_req, res) => {
 });
 
 
-apiRouter.post('/country/positions', async (req, res) => {
-    DB.createCountryDancePosition(req.body.position_name, req.body.desc);
-    // const countryDancePosition = await DB.createCountryDancePosition(req.position_name, req.desc);
-    res.status(200).end();
-});
-
-apiRouter.post('/country/moves', async (req, res) => {
-    DB.createCountryDanceMove(req.body.move_name, req.body.pos_start, req.body.pos_end, req.body.description, req.body.description);
-    // const countryDancePosition = await DB.createCountryDancePosition(req.position_name, req.desc);
-    res.status(200).end();
-});
 
 apiRouter.get('/country/positions', async (req, res) => {
     const positions = await DB.getCountryDancePositions();
@@ -132,3 +121,28 @@ const httpService = app.listen(port, () => {
 });
 
 peerProxy(httpService);
+
+const betaApiRouter = express.Router();
+betaApiRouter.use(async (req, res, next) => {
+    const authToken = req.cookies[authCookieName];
+    const user = await DB.getBetaUserByToken(authToken);
+    if (user) {
+        next();
+    } else {
+        res.status(401).send({ msg: 'Unauthorized' });
+    }
+});
+apiRouter.use(betaApiRouter);
+
+
+apiRouter.post('/country/positions', async (req, res) => {
+    DB.createCountryDancePosition(req.body.position_name, req.body.desc);
+    // const countryDancePosition = await DB.createCountryDancePosition(req.position_name, req.desc);
+    res.status(200).end();
+});
+
+apiRouter.post('/country/moves', async (req, res) => {
+    DB.createCountryDanceMove(req.body.move_name, req.body.pos_start, req.body.pos_end, req.body.description, req.body.description);
+    // const countryDancePosition = await DB.createCountryDancePosition(req.position_name, req.desc);
+    res.status(200).end();
+});
