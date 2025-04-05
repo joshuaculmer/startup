@@ -1,15 +1,16 @@
 import React from "react";
 
 export function MyMoves() {
-    const [moves, setmoves] = React.useState('');
+    const [moves, setMoves] = React.useState('');
 
     React.useEffect(() => {
-        fetch('/api/country/moves')
+        fetch('/api/country/mymoves')
             .then(response => response.json())
             .then(data => {
-                console.log("Fetched data:", data)
+                console.log(data)
                 // setmoves(data)
-                setmoves(JSON.stringify(data, null, "  "))
+                setMoves(data);
+                console.log(moves);
             })
             .catch(error => console.error("Error fetching data:", error));
     }, []);
@@ -26,9 +27,24 @@ export function MyMoves() {
                 This also depends on the database.
             </div>
 
-            <ul>
-                {moves}
-            </ul>
+            <div>
+                {moves.length === 0 ? (
+                    <p className="text-gray-500 italic">You have not added moves to your list yet.</p>
+                ) : (
+                    moves.map((move) => (
+                        <div key={move._id} className="p-4 border rounded-md shadow">
+                            <h3 className="text-lg font-semibold">{move.move_name}</h3>
+                            <p className="text-gray-600">{move.description}</p>
+                            {/* <button
+                                className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800"
+                                onClick={() => addDanceMove(move._id)}
+                            >
+                                Do Something
+                            </button> */}
+                        </div>
+                    ))
+                )}
+            </div>
         </main>
     )
 }

@@ -10,7 +10,7 @@ export function DanceMoves() {
     const [type, settype] = React.useState('');
     const [difficulty, setdifficulty] = React.useState('');
 
-    const [moves, setmoves] = React.useState('');
+    const [moves, setMoves] = React.useState('');
 
     async function createDanceMove() {
         if (move_name != "" && pos_start != "" && pos_end != "" && description != "") {
@@ -39,13 +39,18 @@ export function DanceMoves() {
         setdifficulty("");
     };
 
+    async function addDanceMove(danceMove) {
+        console.log(danceMove);
+    };
+
     React.useEffect(() => {
         fetch('/api/country/moves')
             .then(response => response.json())
             .then(data => {
-                console.log("Fetched data:", data)
+                console.log(data)
                 // setmoves(data)
-                setmoves(JSON.stringify(data, null, "  "))
+                setMoves(data);
+                console.log(moves);
             })
             .catch(error => console.error("Error fetching data:", error));
     }, []);
@@ -59,12 +64,24 @@ export function DanceMoves() {
 
             </div>
 
-            <ul>
-                {moves}
-                {/* {moves.map(item => (
-                    <li key={item.move_name}>{item.move_description}</li>
-                ))} */}
-            </ul>
+            <div>
+                {moves.length === 0 ? (
+                    <p className="text-gray-500 italic">No moves available yet.</p>
+                ) : (
+                    moves.map((move) => (
+                        <div key={move._id} className="p-4 border rounded-md shadow">
+                            <h3 className="text-lg font-semibold">{move.move_name}</h3>
+                            <p className="text-gray-600">{move.description}</p>
+                            <button
+                                className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800"
+                                onClick={() => addDanceMove(move._id)}
+                            >
+                                Do Something
+                            </button>
+                        </div>
+                    ))
+                )}
+            </div>
 
             {/* move_name, pos_start, pos_end, description */}
             <div className='input-group mb-3'>
