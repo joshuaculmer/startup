@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 export function DancePositions() {
     const [positionName, setPositionName] = React.useState('');
     const [description, setDescription] = React.useState('');
-    const [positions, setPositions] = React.useState('');
+    const [positions, setPositions] = React.useState([]);
 
     async function createDancePosition() {
         if (positionName != "" && description != "") {
@@ -24,37 +24,20 @@ export function DancePositions() {
         setDescription("");
     };
 
-    // async function updateDancePositions() {
-    //     const response = await fetch('/api/country/positions', {
-    //         method: 'get',
-    //         headers: {
-    //             'Content-type': 'application/json; charset=UTF-8',
-    //         },
-    //     });
-    //     // .then((x) => console.log(x))
-    //     // .then((x) => x.json())
-    //     // .then((response) => {
-    //     //     document.querySelector("pre").textContent = JSON.stringify(
-    //     //         response,
-    //     //         null,
-    //     //         "  "
-    //     //     );
-    //     // });
-    //     // console.log(response.json());
-    //     const positions_json = response.json();
-    //     setPositions(positions_json);
-    //     // console.log(positions);
-    //     document.querySelector("pre").textContent = JSON.stringify(response.json(), null, "  ");
-    // };
+    async function addDancePosition(dancePosition) {
+        console.log(dancePosition);
+    };
 
-    // updateDancePositions();
+
 
     React.useEffect(() => {
         fetch('/api/country/positions')
             .then(response => response.json())
             .then(data => {
-                console.log("Fetched data:", data)
-                setPositions(JSON.stringify(data, null, "  "))
+                console.log(data);
+                // dataArray = new Array(0);
+                setPositions(data);
+                console.log(positions);
             })
             .catch(error => console.error("Error fetching data:", error));
     }, []);
@@ -66,10 +49,24 @@ export function DancePositions() {
                     <h3>Dance instruction on each position will be placed here. Along with a list for all possible positions</h3>
                 </section>
 
-                <ul>
-                    {positions}
-                </ul>
-
+                <div>
+                    {positions.length === 0 ? (
+                        <p className="text-gray-500 italic">No positions available yet.</p>
+                    ) : (
+                        positions.map((pos) => (
+                            <div key={pos._id} className="p-4 border rounded-md shadow">
+                                <h3 className="text-lg font-semibold">{pos.position_name}</h3>
+                                <p className="text-gray-600">{pos.description}</p>
+                                <button
+                                    className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800"
+                                    onClick={() => addDancePosition(pos._id)}
+                                >
+                                    Do Something
+                                </button>
+                            </div>
+                        ))
+                    )}
+                </div>
 
                 <div className='input-group mb-3'>
                     {/* <span className='input-group-text'>@</span> */}

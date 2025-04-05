@@ -46,9 +46,9 @@ function App() {
                                 <NavLink className='nav-link' to='DancePositions'>Dance Positions</NavLink>
                                 <NavLink className='nav-link' to='DanceMoves'>Dance Moves</NavLink>
                                 {authState === AuthState.Authenticated && (
-                                    <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>)}
-                                {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='MyPositions'>My Positions</NavLink>)}
+                                {authState === AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>)}
                                 {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>)}
                                 {/* {authState === AuthState.Authenticated && (
