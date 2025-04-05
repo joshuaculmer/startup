@@ -9,6 +9,7 @@ import { Share } from './share/share';
 import { Recipe } from './recipePlugin/recipe';
 import { Welcome } from './welcome/welcome'
 import { AuthState } from './login/authState';
+import { MyPositions } from './myPositions/myPositions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Authenticated } from './login/authenticated';
 import "./app.css";
@@ -47,6 +48,8 @@ function App() {
                                 {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='MyMoves'>My Moves</NavLink>)}
                                 {authState === AuthState.Authenticated && (
+                                    <NavLink className='nav-link' to='MyPositions'>My Positions</NavLink>)}
+                                {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='ComboCalculator'>Combo Calculator</NavLink>)}
                                 {/* {authState === AuthState.Authenticated && (
                                     <NavLink className='nav-link' to='Share'>Share</NavLink>)} */}
@@ -68,6 +71,7 @@ function App() {
                     <Route path='/DancePositions' element={<DancePositions />} />
                     <Route path='/DanceMoves' element={<DanceMoves />} />
                     <Route path='/MyMoves' element={<MyMoves />} />
+                    <Route path='/MyPositions' element={<MyPositions />} />
                     <Route path='/ComboCalculator' element={<ComboCalculator />} />
                     <Route path='/Share' element={<Share userName={userName} />} />
                     <Route path='/About' element={<About />} />
