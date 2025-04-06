@@ -1,7 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 
-export function DancePositions() {
+export function DancePositions({ betaState }) {
     const [positionName, setPositionName] = React.useState('');
     const [description, setDescription] = React.useState('');
     const [positions, setPositions] = React.useState([]);
@@ -67,19 +67,25 @@ export function DancePositions() {
                         ))
                     )}
                 </div>
+                {betaState === true ? (
+                    <div>
+                        <div className='input-group mb-3'>
+                            {/* <span className='input-group-text'>@</span> */}
+                            <input className='form-control' type='text' value={positionName} onChange={(e) => setPositionName(e.target.value)} placeholder='Position Name here' />
+                        </div>
+                        <div className='input-group mb-3'>
+                            {/* <span className='input-group-text'>🔒</span> */}
+                            <input className='form-control' type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Put a short description here for the position' />
+                        </div>
 
-                <div className='input-group mb-3'>
-                    {/* <span className='input-group-text'>@</span> */}
-                    <input className='form-control' type='text' value={positionName} onChange={(e) => setPositionName(e.target.value)} placeholder='Position Name here' />
-                </div>
-                <div className='input-group mb-3'>
-                    {/* <span className='input-group-text'>🔒</span> */}
-                    <input className='form-control' type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Put a short description here for the position' />
-                </div>
+                        <Button variant='primary' onClick={() => createDancePosition()}>
+                            Submit
+                        </Button>
 
-                <Button variant='primary' onClick={() => createDancePosition()}>
-                    Submit
-                </Button>
+                    </div>
+                ) : (
+                    <div></div>
+                )}
             </div>
 
         </main>

@@ -20,6 +20,7 @@ function App() {
     const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
+    const [betaState, setBetaState] = React.useState(false);
 
     function logout() {
         fetch(`/api/auth/logout`, {
@@ -31,7 +32,8 @@ function App() {
             .finally(() => {
                 localStorage.removeItem('userName');
                 setAuthState(AuthState.Unauthenticated)
-                props.onLogout();
+                setBetaState(false);
+                // props.onLogout();
             });
     }
 
@@ -68,8 +70,8 @@ function App() {
 
                 <Routes>
                     <Route path='/' element={<Welcome />} exact />
-                    <Route path='/DancePositions' element={<DancePositions />} />
-                    <Route path='/DanceMoves' element={<DanceMoves />} />
+                    <Route path='/DancePositions' element={<DancePositions betaState={betaState} />} />
+                    <Route path='/DanceMoves' element={<DanceMoves betaState={betaState} />} />
                     <Route path='/MyMoves' element={<MyMoves />} />
                     <Route path='/MyPositions' element={<MyPositions />} />
                     <Route path='/ComboCalculator' element={<ComboCalculator />} />
@@ -78,9 +80,10 @@ function App() {
                     <Route path='/Login' element={<Login
                         userName={userName}
                         authState={authState}
-                        onAuthChange={(userName, authState) => {
+                        onAuthChange={(userName, authState, betaState) => {
                             setAuthState(authState);
                             setUserName(userName);
+                            setBetaState(betaState);
                         }}
                     />} />
                     {/* <Route path='/Recipes' element={<Recipe />} /> */}

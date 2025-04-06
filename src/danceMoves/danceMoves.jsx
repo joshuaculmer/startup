@@ -1,7 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 
-export function DanceMoves() {
+export function DanceMoves({ betaState }) {
     // move_name, pos_start, pos_end, description, type, difficulty
     const [move_name, setmove_name] = React.useState('');
     const [pos_start, setpos_start] = React.useState('');
@@ -83,29 +83,35 @@ export function DanceMoves() {
                 )}
             </div>
 
-            {/* move_name, pos_start, pos_end, description */}
-            <div className='input-group mb-3'>
-                <input className='form-control' type='text' value={move_name} onChange={(e) => setmove_name(e.target.value)} placeholder='Move Name here' />
-            </div>
-            <div className='input-group mb-3'>
-                <input className='form-control' type='text' value={pos_start} onChange={(e) => setpos_start(e.target.value)} placeholder='pos_start' />
-            </div>
-            <div className='input-group mb-3'>
-                <input className='form-control' type='text' value={pos_end} onChange={(e) => setpos_end(e.target.value)} placeholder='pos_end' />
-            </div>
-            <div className='input-group mb-3'>
-                <input className='form-control' type='text' value={description} onChange={(e) => setdescription(e.target.value)} placeholder='description' />
-            </div>
-            <div className='input-group mb-3'>
-                <input className='form-control' type='text' value={type} onChange={(e) => settype(e.target.value)} placeholder='type' />
-            </div>
-            <div className='input-group mb-3'>
-                <input className='form-control' type='text' value={difficulty} onChange={(e) => setdifficulty(e.target.value)} placeholder='difficulty' />
-            </div>
+            {betaState === true ? (
+                <div>
+                    {/* move_name, pos_start, pos_end, description */}
+                    <div className='input-group mb-3'>
+                        <input className='form-control' type='text' value={move_name} onChange={(e) => setmove_name(e.target.value)} placeholder='Move Name here' />
+                    </div>
+                    <div className='input-group mb-3'>
+                        <input className='form-control' type='text' value={pos_start} onChange={(e) => setpos_start(e.target.value)} placeholder='pos_start' />
+                    </div>
+                    <div className='input-group mb-3'>
+                        <input className='form-control' type='text' value={pos_end} onChange={(e) => setpos_end(e.target.value)} placeholder='pos_end' />
+                    </div>
+                    <div className='input-group mb-3'>
+                        <input className='form-control' type='text' value={description} onChange={(e) => setdescription(e.target.value)} placeholder='description' />
+                    </div>
+                    <div className='input-group mb-3'>
+                        <input className='form-control' type='text' value={type} onChange={(e) => settype(e.target.value)} placeholder='type' />
+                    </div>
+                    <div className='input-group mb-3'>
+                        <input className='form-control' type='text' value={difficulty} onChange={(e) => setdifficulty(e.target.value)} placeholder='difficulty' />
+                    </div>
 
-            <Button variant='primary' onClick={() => createDanceMove()}>
-                Submit
-            </Button>
+                    <Button variant='primary' onClick={() => createDanceMove()}>
+                        Submit
+                    </Button>
+                </div>
+            ) : (
+                <div></div>
+            )}
 
         </main>
     )

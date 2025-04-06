@@ -25,7 +25,23 @@ export function Unauthenticated(props) {
         });
         if (response?.status === 200) {
             localStorage.setItem('userName', userName);
-            props.onLogin(userName);
+
+            let text = await response.json();
+            if (text.beta) {
+                props.onLogin(userName, true);
+            } else {
+                props.onLogin(userName, false);
+            }
+            // console.log("testing if I can log from unathenitcated")
+
+            // // let jsondata = response.json();
+            // console.log("json value: " + text);
+            // console.log("beta value: " + text.beta);
+            // console.log(jsondata);
+            // console.log(data.data.beta);
+            // if (response.data.beta) {
+            //     console.log("user is a beta user");
+            // }
         } else {
             const body = await response.json();
             setDisplayError(`⚠ Error: ${body.msg}`);
