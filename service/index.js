@@ -100,6 +100,29 @@ secureApiRouter.use(async (req, res, next) => {
     }
 });
 
+apiRouter.post('/country/mypositions', async (req, res) => {
+    const authToken = req.cookies[authCookieName];
+    const user = await DB.getUserByToken(authToken);
+    const response = await DB.addToMyDancePosition(req.body.pos_id, user._id);
+    res.json(response);
+    res.status(200).end();
+});
+
+// apiRouter.get('/country/myPositions', async (req, res) => {
+//     // const authToken = req.cookies[authCookieName];
+//     // const user = await DB.getUserByToken(authToken);
+//     // const response = await DB.getMyDancePositions(user._id);
+//     const response = await DB.getCountryDanceMoves();
+//     res.json(response);
+//     res.status(200).end();
+// });
+
+apiRouter.get('/country/myPositions', async (req, res) => {
+    const positions = await DB.getCountryDancePositions();
+    res.json(positions);
+    res.status(200).end();
+});
+
 
 // Default error handler
 app.use(function (err, req, res, next) {

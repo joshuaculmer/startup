@@ -5,10 +5,10 @@ export function MyPositions() {
     const [positions, setPositions] = React.useState('');
 
     React.useEffect(() => {
-        fetch('/api/country/mypositions')
+        fetch('/api/country/myPositions')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                console.log("data from /myPositions" + data);
                 // dataArray = new Array(0);
                 setPositions(data);
                 console.log(positions);
@@ -30,7 +30,7 @@ export function MyPositions() {
 
             <div>
                 {positions.length === 0 ? (
-                    <p className="text-gray-500 italic">You have not added positions to your list yet.</p>
+                    <p className="text-gray-500 italic">Your positions are not available yet.</p>
                 ) : (
                     positions.map((pos) => (
                         <div key={pos._id} className="p-4 border rounded-md shadow">

@@ -3,17 +3,17 @@ import React from "react";
 export function MyMoves() {
     const [moves, setMoves] = React.useState('');
 
-    React.useEffect(() => {
-        fetch('/api/country/mymoves')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                // setmoves(data)
-                setMoves(data);
-                console.log(moves);
-            })
-            .catch(error => console.error("Error fetching data:", error));
-    }, []);
+    // React.useEffect(() => {
+    //     fetch('/api/country/mymoves')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             // setmoves(data)
+    //             setMoves(data);
+    //             console.log(moves);
+    //         })
+    //         .catch(error => console.error("Error fetching data:", error));
+    // }, []);
 
     return (
         <main>

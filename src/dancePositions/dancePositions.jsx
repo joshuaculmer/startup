@@ -24,8 +24,15 @@ export function DancePositions({ betaState }) {
         setDescription("");
     };
 
-    async function addDancePosition(dancePosition) {
-        console.log(dancePosition);
+    async function addDancePosition(pos_id) {
+        const response = await fetch(`/api/country/mypositions`, {
+            method: 'post',
+            body: JSON.stringify({ pos_id: pos_id }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        console.log("successfully requested add move")
     };
 
 

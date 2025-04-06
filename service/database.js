@@ -9,6 +9,7 @@ const db = client.db('dancing');
 const userCollection = db.collection('user');
 const countryMoveCollection = db.collection('country_dance_move');
 const countryPositionCollection = db.collection('country_dance_position');
+const userPositionCollection = db.collection('user_dance_position');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -107,6 +108,57 @@ async function getCountryDanceMoves() {
     return serializedData;
 }
 
+async function addToMyDancePosition(pos_id, user_id) {
+    const countryUserPosition = {
+        pos_id: pos_id,
+        user_id: user_id,
+    };
+    const response = await userPositionCollection.insertOne(countryUserPosition);
+
+    return response;
+}
+
+async function getMyDancePositions(user_id) {
+    const result = await userPositionCollection.aggregate([
+        {
+            $match: { user_id: user_id }
+        },
+        {
+            $lookup: {
+                from: 'country_dance_position',
+                localField: 'pos_id',
+                foreignField: '_id',
+                as: 'position_info'
+            }
+        },
+        {
+            $unwind: '$position_info'
+        },
+        {
+            $project: {
+                _id: 1,
+                user_id: 1,
+                pos_id: 1,
+                position_name: '$position_info.position_name',
+                description: '$position_info.description'
+            }
+        }
+    ]).toArray();
+
+    res.status(200).json(result);
+
+    // const cursor = countryMoveCollection.find({}, { 'move_name': 1, 'pos_start': 1, 'pos_end': 1, 'description': 1, 'type': 1, 'difficulty': 1 });
+    // const data = await cursor.toArray();
+
+    // const serializedData = data.map(doc => ({
+    //     ...doc,
+    //     _id: doc._id.toString() // Convert ObjectId to string
+    // }));
+
+    // return serializedData;
+
+}
+
 module.exports = {
     getUser,
     getUserByToken,
@@ -116,4 +168,6 @@ module.exports = {
     getCountryDancePositions,
     getCountryDanceMoves,
     getBetaUserByToken,
+    addToMyDancePosition,
+    getMyDancePositions,
 };
